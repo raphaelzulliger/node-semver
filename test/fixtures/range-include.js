@@ -115,4 +115,14 @@ module.exports = [
   ['^1.0.0-rc2', '1.0.1-rc1', { includePrerelease: true }],
   ['^1.0.0', '1.0.1-rc1', { includePrerelease: true }],
   ['^1.0.0', '1.1.0-rc1', { includePrerelease: true }],
+
+  // these definitely makes sense...
+  ['>=1.0.0 <1.1.1-pre', '1.1.0-pre', { includePrerelease: true }],
+  ['>=1.0.0-0 <1.1.1-pre', '1.1.0-pre', { includePrerelease: true }],
+  ['>=1.0.0 <1.1.0', '1.1.0-pre', { includePrerelease: true }],
+  // ...while here, pre-releases seem implicitly to be taken into account if range is specified with a pre-release
+  ['>=1.0.0-0 <=1.0.1', '1.0.0-0'],
+  ['>=1.0.0-0 <=1.0.1', '1.0.0-pre'],
+  ['>=1.0.0-0 <=1.1.1-z', '1.1.1-z'],
+  ['>=1.0.0-0 <=1.1.1-z', '1.1.1-pre']
 ]

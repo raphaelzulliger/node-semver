@@ -78,4 +78,12 @@ module.exports = [
   ['2.x', '3.0.0-pre.0', { includePrerelease: true }],
   ['^1.0.0', '1.0.0-rc1', { includePrerelease: true }],
   ['^1.2.3-rc2', '2.0.0', { includePrerelease: true }],
+
+  // this probably makes sense...
+  ['>=1.0.0 <1.1.1-z', '1.1.0-pre'],
+  // ...but then, why is this one 'included' (i.e. this test would fail?)
+  // ['>=1.0.0 <1.1.1-z', '1.1.1-pre'],
+
+  // this *may* make sense... but does it really?
+  ['>=1.0.0 <=1.1.0', '1.0.0-pre', { includePrerelease: true }]
 ]
