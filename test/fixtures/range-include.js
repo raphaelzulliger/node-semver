@@ -120,6 +120,13 @@ module.exports = [
   ['>=1.0.0 <1.1.1-pre', '1.1.0-pre', { includePrerelease: true }],
   ['>=1.0.0-0 <1.1.1-pre', '1.1.0-pre', { includePrerelease: true }],
   ['>=1.0.0 <1.1.0', '1.1.0-pre', { includePrerelease: true }],
+  
+  // these are fine...
+  ['  1.0.x', '1.0.0-pre', { includePrerelease: true }],
+  ['>=1.0.x', '1.0.0-pre', { includePrerelease: true }],
+  // ...but this fails:
+  // ['>=1.0.0', '1.0.0-pre', { includePrerelease: true }],
+
   // ...while here, pre-releases seem implicitly to be taken into account if range is specified with a pre-release
   ['>=1.0.0-0 <=1.0.1', '1.0.0-0'],
   ['>=1.0.0-0 <=1.0.1', '1.0.0-pre'],
